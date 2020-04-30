@@ -2,7 +2,7 @@
   div.team
     v-subheader Team
     v-container.my-5
-      v-layout(row)
+      v-row
         v-flex(xs12 sm6 md4 lg3 v-for="person in team" :key='person.name')
           v-card.text-center.ma-3(flat color='grey lighten-5')
             v-responsive.pt-4

@@ -1,6 +1,9 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
 import Home from '../components/HelloWorld'
+import Dashboard from '../views/Dashboard'
+import Team from '../views/Team'
+import Projects from '../views/Projects'
+import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
@@ -13,26 +16,17 @@ Vue.use(VueRouter)
   {
     path: '/Dashboard',
     name: 'Dashboard',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: function () {
-      return import(/* webpackChunkName: "about" */ '../views/Dashboard.vue')
-    }
+    component: Dashboard
   },
   {
     path: '/team',
     name: 'Team',
-    component: function () {
-      return import(/* webpackChunkName: "about" */ '../views/Team.vue')
-    }
+    component: Team
   },
   {
     path: '/projects',
     name: 'Projects',
-    component: function () {
-      return import(/* webpackChunkName: "about" */ '../views/Projects.vue')
-    }
+    component: Projects
   }
 ]
 
