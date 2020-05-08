@@ -4,8 +4,8 @@ module.exports = {
   outputDir: path.resolve(__dirname, '../dist'),
   // devServer: {
   //   proxy: {
-  //     '/api/v1': {
-  //       target: 'http://localhost:5000',
+  //     '/despachonacional': {
+  //       target: 'http://www.xm.com.co',
   //       ws: true,
   //       changeOrigin: true
   //     }

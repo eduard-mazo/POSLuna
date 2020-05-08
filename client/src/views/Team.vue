@@ -1,20 +1,16 @@
 <template lang='pug'>
-  div.team
-    v-subheader Team
-    v-container.my-5
-      v-row
-        v-flex(xs12 sm6 md4 lg3 v-for="person in team" :key='person.name')
-          v-card.text-center.ma-3(flat color='grey lighten-5')
-            v-responsive.pt-4
-              v-avatar(size='100')
-                img(:src="`${person.avatar}`")
-            v-card-text
-              .subheading.one-line {{person.name.toUpperCase()}}
-              .grey--text {{person.role}}
-            v-card-actions
-              v-btn(text small color='grey')
-                v-icon(small left) fab fa-facebook-messenger
-                span Message
+  v-container(class="d-flex flex-row flex-wrap pa-2")
+    v-card.ma-2(outlined xs12 sm6 md4 lg3 v-for="person in team" :key='person.name' width='250')
+      v-responsive.pt-4.text-center
+        v-avatar(size='100')
+          img(:src="`${person.avatar}`")
+      v-card-text
+        .subheading.one-line {{person.name.toUpperCase()}}
+        .grey--text {{person.role}}
+      v-card-actions
+        v-btn(text small color='grey')
+          v-icon(small left) fab fa-facebook-messenger
+          span Message
 </template>
 
 <script>

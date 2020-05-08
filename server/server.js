@@ -4,6 +4,16 @@ const morgan = require('morgan');
 const cookieSession = require('cookie-session');
 const SESSION_SECRET = 'ooo sooo secret string!!!! super secret!!! dont touch me!!';
 const path = require('path');
+const redis = require("redis");
+const client = redis.createClient();
+
+client.on("error", function(error) {
+  console.error(error);
+});
+
+client.set("EDUARD", "MAZO", redis.print);
+// client.get("key", redis.print);
+
 
 // Load env
 dotenv.config({ path: './config.env'});
@@ -29,4 +39,4 @@ if (process.env.NODE_ENV === 'production') {
   app.get(/.*/, (req, res) => res.sendFile(path.resolve('../dist/index.html')));
 }
 
-app.listen(PORT, () => {console.log(`MiniMax server running in ${process.env.NODE_ENV} on ${PORT}`);});
+app.listen(PORT, () => {console.log(`POSLUNA server running in ${process.env.NODE_ENV} on ${PORT}`);});
