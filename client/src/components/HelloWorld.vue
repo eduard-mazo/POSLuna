@@ -3,7 +3,7 @@
     v-row.text-center
       v-col.mb-4
         h1.display-2.font-weight-bold.mb-3
-          | {{value}}
+          | {{value[1][0]}}
         
 </template>
 
@@ -20,9 +20,7 @@
     methods: {
       async getName() {
         const res = await fetch('api/v1/xm');
-        // const value = await res.json();
-        this.value = await res.text();
-        console.log(this.value, 'hi!', res.status);
+        this.value = await res.json();
       }
     }
   }
